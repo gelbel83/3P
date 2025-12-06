@@ -792,5 +792,309 @@ int main()
     std::cout << "Waga sciany: " << n * k << "kg" << std::endl;
 }
 
+zad. 3.35 str. 97
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	enum Stanowisko {
+		dyrektor, 
+		kierownik, 
+		sekretarka, 
+		portier 
+	} stanowisko; 
+
+	int temp;
+
+	cout << "1. dyrektor" << endl;
+	cout << "2. kierownik" << endl;
+	cout << "3. sekretarka" << endl;
+	cout << "4. portier" << endl << endl;
+
+	cout << "Wprowadz numer stanowiska: ";
+	cin >> temp;
+
+	stanowisko = (Stanowisko)(temp - 1);
+	cout << stanowisko;
+
+	return 0;
+}
+
+zad 3.36 str 98
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	enum DlugoscOkresuKsztalcenia {
+		LICEUM = 4,
+		TECHNIKUM = 5,
+		SZKOLA_PODSTAWOWA = 8
+	};
+
+	DlugoscOkresuKsztalcenia dlugoscOkresuKsztalcenia = TECHNIKUM;
+
+	switch (dlugoscOkresuKsztalcenia)
+	{
+		case LICEUM:
+			cout << "Liceum: ";
+			break;
+		case TECHNIKUM:
+			cout << "Technikum: ";
+			break;
+		case SZKOLA_PODSTAWOWA:
+			cout << "Szkola podstawowa: ";
+			break;
+		default:
+			break;
+	}
+
+	cout << dlugoscOkresuKsztalcenia;
+	
+	return 0;
+}
+
+zad. 20 str. 102
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	enum DlugoscOkresuKsztalcenia {
+		LICEUM = 4,
+		TECHNIKUM = 5,
+		SZKOLA_PODSTAWOWA = 8
+	};
+
+	int temp;
+	DlugoscOkresuKsztalcenia dlugoscOkresuKsztalcenia;
+
+	cout << "Wprowadz dlugosc okresu ksztalcenia w szkole: ";
+	cin >> temp;
+
+	dlugoscOkresuKsztalcenia = (DlugoscOkresuKsztalcenia)temp;
+	
+	switch (dlugoscOkresuKsztalcenia)
+	{
+	case LICEUM:
+		cout << "Liceum";
+		break;
+	case TECHNIKUM:
+		cout << "Technikum";
+		break;
+	case SZKOLA_PODSTAWOWA:
+		cout << "Szkola podstawowa";
+		break;
+	default:
+		cout << "Nie znam takiej szkoly";
+		break;
+	}
+
+	return 0;
+}
+
+zad. 1 str. 119
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const double PI = 3.14159;
+    double promien, pole, obwod;
+
+    double *w_promien = &promien, *w_pole = &pole, *w_obwod = &obwod;
+    const double* W_PI = &PI;
+       
+    cout << "Podaj promien: ";
+    cin >> *w_promien;
+    
+    *w_pole = 2 * *W_PI * *w_promien;
+    *w_obwod = *W_PI * (*w_promien * *w_promien);
+
+    cout << "Pole: " << pole << endl;
+    cout << "Obwod " << obwod << endl;
+}
+
+zad. 2 str. 119
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int PI = 3.14159;
+    int* r = new int;
+    int* p = new int;
+    int* o = new int;
+
+    cout << "Podaj promien";
+    cin >> *r;
+
+    *p = 2 * PI * *r;
+    *o = PI * (*r * *r);
+    
+    cout << "Pole: " << p;
+    cout << "Obwod " << o;
+}
+
+zad. 3 str. 120
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float a, b, c, ob, ppb, dk;
+    float  *w_a = &a, *w_b = &b, *w_c = &c, *w_ob = &ob, *w_ppb = &ppb, *w_dk = &dk;
+
+    cout << "Wprowadz a: ";
+    cin >> *w_a;
+
+    cout << "Wprowadz b: ";
+    cin >> *w_b;
+
+    cout << "Wprowadz c: ";
+    cin >> *w_c;
+
+    *w_ob = *w_a * *w_b * *w_c;
+    *w_ppb = 2 * (*w_a + *w_b) * *w_c;
+    *w_dk = 4 * *w_a + 4 * *w_b + 4 * *w_c;
+
+    cout << "Objetosc prostopadloscianu: " << *w_ob << endl;
+    cout << "Pole powierzchni bocznej prostopadloscianu: " << *w_ppb << endl;
+    cout << "Suma dlugosci krawedzi prostopadloscianu: " << *w_dk << endl;
+
+    delete w_a, w_b, w_c, w_ob, w_ppb, w_dk;
+}
+
+zad. 4 str. 120
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float *a = new float, *b = new float, *c = new float, *ob = new float, *ppb = new float, *dk = new float;
+
+    cout << "Wprowadz a: ";
+    cin >> *a;
+
+    cout << "Wprowadz b: ";
+    cin >> *b;
+
+    cout << "Wprowadz c: ";
+    cin >> *c;
+
+    *ob = *a * *b * *c;
+    *ppb = 2 * (*a + *b) * *c;
+    *dk = 4 * *a + 4 * *b + 4 * *c;
+
+    cout << "Objetosc prostopadloscianu: " << *ob << endl;
+    cout << "Pole powierzchni bocznej prostopadloscianu: " << *ppb << endl;
+    cout << "Suma dlugosci krawedzi prostopadloscianu: " << *dk << endl;
+
+    delete a, b, c, ob, ppb, dk;
+}
+
+zad. 5 str. 120
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int* n = new int;
+
+    cout << "Wprowadz n: ";
+    cin >> *n;
+
+    if (*n % 2 == 0) cout << "Liczba jest parzysta." << endl;
+    else cout << "Liczba jest nieparzysta." << endl;
+    
+    delete n;
+}
+
+zad. 6 str. 120
+
+- wariant pierwszy (const int*)
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+
+    const int* w_a = &a;
+    const int* w_b = &b;
+
+
+    cout << "Wprowadz pierwsza wartosc logiczna: ";
+    cin >> a;
+
+    cout << "Wprowadz druga wartosc logiczna: ";
+    cin >> b;
+
+    cout << "Suma logiczna: " << ((bool)(*w_a) || (bool)(*w_b)) << endl;
+    cout << "Iloczyn logiczny: " << ((bool)(*w_a) && (bool)(*w_b)) << endl;
+    
+    delete w_a, w_b;
+}
+
+- wariant drugi (int const*)
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+
+    int const* w_a = &a;
+    int const* w_b = &b;
+
+
+    cout << "Wprowadz pierwsza wartosc logiczna: ";
+    cin >> a;
+
+    cout << "Wprowadz druga wartosc logiczna: ";
+    cin >> b;
+
+    cout << "Suma logiczna: " << ((bool)(*w_a) || (bool)(*w_b)) << endl;
+    cout << "Iloczyn logiczny: " << ((bool)(*w_a) && (bool)(*w_b)) << endl;
+
+    delete w_a, w_b;
+}
+
+
+Temat: Tablice
+
+1. Tablica - wiele danych tego samego typu
+
+2. Rodzaje tablic
+    a) Jednowymiarowe
+    b) Wielowymiarowe
+
+3. Deklarowanie tablic
+
+typ_składowy nazwa_tablicy[liczba_elementów];
+
+gdzie:
+- typ_składowy oznacza typ danych, do którego należą elementy składowe tablicy,
+- nazwa_tablicy to nazwa (identyfikator) deklarowanej zmiennej tablicowej,
+- liczba_elementów to liczba elementów składowych tablicy. 
+
+4. Odwołanie do elementu tablicy
+
+nazwa_tablicy[indeks];
+
+Tablice:
+- indeksowane od 0
+- numerowane od 1 
 
 

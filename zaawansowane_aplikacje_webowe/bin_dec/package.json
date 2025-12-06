@@ -4,7 +4,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "node --trace-warnings --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node node_modules/jest/bin/jest.js"
   },
   "author": "",
   "license": "ISC",

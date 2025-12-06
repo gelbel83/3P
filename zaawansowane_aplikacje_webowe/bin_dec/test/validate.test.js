@@ -84,3 +84,9 @@ describe("testowanie funkcji isStringDecimal", function() {
         expect(result).toBe(expectedResult);
     });
 });
+
+describe("opis", function() {
+    test("jakis test", function() {
+        expect(12 + 4).toBe(16);
+    });
+});

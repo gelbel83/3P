@@ -1,0 +1,46 @@
+* {
+    font-family: Cambria;
+}
+
+body {
+    background-color: mistyrose;
+    
+}
+
+.naglowek, .stopka {
+    clear: left;
+    height: 200px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.sekcja {
+    float: left;
+
+    background-color: plum;
+    height: 400px;
+    margin: 5px;
+    box-shadow: 4px 4px 10px dimgray;
+    overflow: hidden;
+}
+
+@media (width <= 800px) {
+    .sekcja {
+        width: 100%;
+    }
+}
+
+@media (width > 800px) {
+    .sekcja {
+        width: 22%;
+    }
+}
+
+h2 {
+    text-align: center;
+}
+
+button:hover {
+    background-color: #505050;
+}
+

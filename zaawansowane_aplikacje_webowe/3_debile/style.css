@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background-color: purple;
+    padding: 1.5em;
+
+}
+
+.main .left, .right {
+    width: 50%;
+    height: calc(100vh - 7.5em);
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+@media (max-width: 700px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main .left, .right {
+        width: 100%;
+        height: calc((100vh - 7.5em) / 2);
+    }
+}
+
+.main .left {
+    background-color: red;
+}
+
+.main .right {
+    background-color: blue;
+}
+
+img {
+    height: 100%;
+}
+
+.footer {
+    background-color: yellow;
+    padding: 0.5em;
+}

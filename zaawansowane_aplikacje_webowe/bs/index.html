@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>bootstrap cos tam cos tam</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+        <header class="text-center text-uppercase">
+            <h1>ciąg arytmetyczny</h1>
+        </header>
+
+        <main class="d-flex flex-fill justify-content-center align-items-center" style="font-size: smaller;">
+			<form class="bg-light p-3">
+				<div class="mb-3 d-flex flex-row justify-content-end rounded-3" style="max-width: 410px;">
+					<label for="firstElement" class="form-label m-2 ">Pierwszy element ciągu: </label>
+					<input type="number" class="form-control" id="firstNumber" aria-describedby="firstElement" style="max-width: 5em; font-size: 1em;">
+				</div>
+
+				<div class="mb-3 d-flex flex-row justify-content-end">
+					<label for="difference" class="form-label m-2 ">Różnica: </label>
+					<input type="number" class="form-control" id="difference" aria-describedby="difference" style="max-width: 5em; font-size: 1em;">
+				</div>
+
+				<div class="mb-3 d-flex flex-row justify-content-end">
+					<label for="numberOfElements" class="form-label m-2 ">Ilość elementów ciągu </label>
+					<input type="number" class="form-control" id="numberOfElements" aria-describedby="numberOfElements" style="max-width: 5em; font-size: 1em;">
+				</div>
+
+				<div class="d-flex justify-content-center gap-2">
+					<button type="submit" class="btn btn-dark">Oblicz</button>
+					<button type="reset" class="btn btn-dark">Reset</button>
+				</div>
+			</form>
+        </main>
+
+        <footer class="p-0">
+            <h3>Konrad Goliński</h3>
+        </footer>
+
+        <script src="app.js"></script>
+    </body>
+</html>

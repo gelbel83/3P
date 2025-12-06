@@ -1,0 +1,8 @@
+Procesor: AMD Ryzen 5 5600X
+Chłodzenie: SilentiumPC Fera 5
+Karta graficzna: Gigabyte GeForce RTX 3070 Ti Gaming 8GB OC
+Pamięci: ADATA XPG Gammix D10 2x16GB 3600MHz CL18
+Płyta główna: ASUS TUF GAMING B550-PLUS
+Dysk:Crucial P5 Plus M.2 PCI-e 4.0 NVMe 1TB
+Zasilacz: KRUX Generator 750 W 80Plus Gold
+Obudowa: Be quiet! Pure Base 500 DX

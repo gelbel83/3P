@@ -1,0 +1,61 @@
+body {
+    background-color: #FFCC99;
+    font-family: Garamond;
+    text-align: center;
+}
+
+.naglowek, .stopka {
+    background-color: darkgreen;
+    color: white;
+    padding: 30px;
+    font-size: 140%;
+}
+
+.nawigacja {
+    background-color: mediumseagreen;
+    word-spacing: 90px;
+    padding: 20px;
+}
+
+.lewy {
+    width: 70%;
+    height: 500px;
+    float: left;
+    background-color: #FFCC99;
+}
+
+.prawy {
+    background-color: mediumseagreen;
+    width: 30%;
+    height: 500px;
+    text-align: left;
+    float:left;
+}
+
+table {
+    border-color: darkgreen;
+    border-style: dashed;
+    border-width: 1px;
+    border-collapse: collapse;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin: auto;
+}
+
+td, th {
+    padding: 5px;
+}
+
+a {
+    color: white;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+tr:hover {
+    background-color: darkgreen;
+    color: white;
+}

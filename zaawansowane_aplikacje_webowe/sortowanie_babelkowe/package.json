@@ -1,0 +1,12 @@
+{
+  "name": "sortowanie_babelkowe",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
