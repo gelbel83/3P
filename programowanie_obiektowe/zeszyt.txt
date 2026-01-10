@@ -1097,4 +1097,192 @@ Tablice:
 - indeksowane od 0
 - numerowane od 1 
 
+zad 1
+
+#include <iostream>
+
+int main()
+{
+    const int N = 10;
+    float liczby[N];
+
+    for (int i = 0; i < N; i++) {
+        std::cout << "Wprowadz element nr " << i << ": ";
+        std::cin >> liczby[i];
+    }
+
+    float max = liczby[0], min = liczby[0];
+
+    for (int i = 1; i < N; i++) {
+        if (liczby[i] > max) max = liczby[i];
+        if (liczby[i] < min) min = liczby[i];
+    }
+
+    std::cout << "Najmnniejszy element: " << min << std::endl;
+    std::cout << "Najwiekszy element: " << max << std::endl;
+}
+
+
+
+#include <iostream>
+
+int main()
+{
+    const int N = 10;
+    float *liczby = new float[N];
+
+    for (int i = 0; i < N; i++) {
+        std::cout << "Wprowadz element nr " << i << ": ";
+        std::cin >> liczby[i];
+    }
+
+    float max = liczby[0], min = liczby[0];
+
+    for (int i = 1; i < N; i++) {
+        if (liczby[i] > max) max = liczby[i];
+        if (liczby[i] < min) min = liczby[i];
+    }
+
+    std::cout << "Najmnniejszy element: " << min << std::endl;
+    std::cout << "Najwiekszy element: " << max << std::endl;
+}
+
+
+#include <iostream>
+#include <vector>
+
+int main()
+{
+    const int N = 10;
+    std::vector<float> liczby;
+
+    float liczba;
+    for (int i = 0; i < N; i++) {
+        std::cout << "Wprowadz element nr " << i << ": ";
+        std::cin >> liczba;
+
+        liczby.push_back(liczba);
+    }
+
+    float max = liczby[0], min = liczby[0];
+
+    for (int i = 1; i < N; i++) {
+        if (liczby[i] > max) max = liczby[i];
+        if (liczby[i] < min) min = liczby[i];
+    }
+
+    std::cout << "Najmnniejszy element: " << min << std::endl;
+    std::cout << "Najwiekszy element: " << max << std::endl;
+}
+
+zad 2
+
+#include <iostream>
+
+void bubbleSort(int* liczby, int n);
+
+int main()
+{
+    const int N = 5;
+    int liczby[N] = { 3, 9, 12, -5, 2 };
+
+    bubbleSort(liczby, N);
+
+    for (int liczba : liczby) {
+        std::cout << liczba << " ";
+    }
+}
+
+void bubbleSort(int* liczby, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (liczby[j] > liczby[j + 1])
+                std::swap(liczby[j], liczby[j + 1]);
+        }
+    }
+}
+
+
+#include <iostream>
+
+void bubbleSort(int* liczby, int n);
+
+int main()
+{
+    const int N = 5;
+    int liczby[N] = { 3, 9, 12, -5, 4 };
+
+    bubbleSort(liczby, N);
+
+    for (int liczba : liczby) {
+        std::cout << liczba << " ";
+    }
+}
+
+void bubbleSort(int* liczby, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (*(liczby + j) > *(liczby + j + 1))
+                std::swap(*(liczby + j), *(liczby + j + 1));
+        }
+    }
+}
+
+zad 3
+
+#include <iostream>
+
+int main()
+{
+	const int N = 5;
+	float tablica1[N], tablica2[N];
+
+	std::cout << "Wprowadz elementy pierwszej tablicy" << std::endl;
+	for (int i = 0; i < N; i++) {
+		std::cout << "Wprowadz element nr " << i << ": ";
+		std::cin >> tablica1[i];
+	}
+	std::cout << std::endl;
+
+	std::cout << "Wprowadz elementy drugiej tablicy" << std::endl;
+	for (int i = 0; i < N; i++) {
+		std::cout << "Wprowadz element nr " << i << ": ";
+		std::cin >> tablica2[i];
+	}
+	std::cout << std::endl;
+
+	std::cout << "suma tablic: ";
+	for (int i = 0; i < N;i++) {
+		std::cout << tablica1[i] + tablica2[i] << " ";
+	}
+	std::cout << std::endl;
+
+	std::cout << "roznica tablic: ";
+	for (int i = 0; i < N; i++) {
+		std::cout << tablica1[i] - tablica2[i] << " ";
+	}
+	std::cout << std::endl;
+}
+
+zad 4 
+
+#include <iostream>
+
+int main()
+{
+	const int N = 4, M = 3;
+	int tablica[N][M] = { {5, 2, -12}, {12, 3, 4}, {90, 20, 7}, {123, 5, 8} };
+
+	int max = tablica[0][0], min = tablica[0][0];
+
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < M; j++) {
+			if (tablica[i][j] > max) max = tablica[i][j];
+			if (tablica[i][j] < min) min = tablica[i][j];
+		}
+	}
+
+	std::cout << "Najmniejsza wartosc" << min << std::endl;
+	std::cout << "Najwieksza wartosc" << max << std::endl;
+}
 
