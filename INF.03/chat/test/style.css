@@ -1,0 +1,86 @@
+body {
+  font-family: Garamond;
+  margin: 0;
+}
+
+.header-main-side{
+  display: flex;
+}
+
+.header-main{
+  flex: 80;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: tomato;
+  color: white;
+  text-align: center;
+
+  height: 80px;
+}
+
+main {
+  height: 600px;
+}
+
+aside {
+  background-color: coral;
+  flex: 20;
+  height: 680px;
+}
+
+footer {
+  background-color: tomato;
+  color: white;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.chat {
+  border: solid 1px tomato;
+  margin: 15px;
+
+  height: 470px;
+  overflow: scroll;
+}
+
+.jolka-message, .krzysiek-message {
+  border-radius: 5px;
+  width: 90%;
+  height: 70px;
+  margin: 2%;
+  padding: 3px;
+
+  display: flex;
+}
+
+.jolka-message {
+  background-color: #eee;
+}
+
+.krzysiek-message {
+  background-color: #ccc;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+input[type="button"]{
+  background-color: tomato;
+  border: solid 1px darkred;
+  margin: 5px;
+  font-weight: bold;
+}
+
+input[type=text]{
+  width: 500px;
+}
+
+

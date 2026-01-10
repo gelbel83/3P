@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <meta lang="pl">
+        <meta charset="utf-8">
+        <title>Firma IT</title>
+
+        <link rel="stylesheet" href="styl.css" type="text/css">
+        <link rel="icon" href="logo.png" sizes="16x16" type="image/png">
+    </head>
+
+    <body>
+        <section class="calosc">
+            <section class="naglowek">
+                <section class="logo">
+                    <img src="logo.png" alt="firma it">
+                </section>
+    
+                <section class="menu">
+                    <a href="index.html">Strona Główna</a>
+                    <a href="uslugi.html">Usługi</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </section>
+            </section>
+            
+            <section class="baner">
+                <img src="animacja.gif" alt="Usługi informatyczne">
+            </section>
+
+            <section class="glowny">
+                <h2>Kontakt</h2>
+                <table>
+                    <tr>
+                        <td>Imię: </td> <td><input type="text" id="nameField"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>Nazwisko: </td> <td><input type="text" id="surnameField"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>E-mail: </td> <td><input type="email" id="emailField"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>Zgłoszenie: </td> <td><textarea rows="10" cols="40" id="submissionField"></textarea></td>
+                    </tr>
+    
+                    <tr>
+                        <td></td> <td><input type="checkbox" id="consentCheckBox">Zapoznałam/em się z <a href="regulamin.txt">regulaminem</a></td> 
+                    </tr>
+    
+                    <tr>
+                        <td></td> 
+
+                        <td>
+                            <input type="button" value="Resetuj" onclick="clearFields()">
+                            <input type="button" value="Prześlij" id="submitButton" onclick="submit()">
+                        </td>
+                    </tr>
+                </table>
+                
+                <hr>
+
+                <p id="resultParagraph"></p>
+            </section>
+
+            <section class="stopka">
+                Autor strony: <strong>Konrad Goliński</strong>
+            </section>
+        </section>
+
+        <script>
+            const nameField = document.getElementById("nameField");
+            const surnameField = document.getElementById("surnameField");
+            const emailField = document.getElementById("emailField");
+            const submissionField = document.getElementById("submissionField");
+            const consentCheckBox = document.getElementById("consentCheckBox");
+            const resultParagraph = document.getElementById("resultParagraph");
+
+            function clearFields(){
+                let fields = [nameField, surnameField, emailField, submissionField];
+                
+                for(let i = 0;i < fields.length;i++){
+                    fields[i].value = "";
+                }
+
+                consentCheckBox.checked = false;
+                resultParagraph.innerHTML = "";
+            }
+
+            function submit(){
+                let name = nameField.value;
+                let surname = surnameField.value;
+                let submission = submissionField.value;
+                
+                let consent = consentCheckBox.checked;
+                
+                if(consent){
+                    if(name.trim().length > 0 && surname.trim().length > 0){
+                        resultParagraph.style = "color: black;";
+                        resultParagraph.innerHTML = name.toUpperCase() + " " + surname.toUpperCase() + " Treść Twojej sprawy: " + submission;
+                    }
+                }   
+                else{
+                    resultParagraph.style = "color: red;";
+                    resultParagraph.innerHTML = "Musisz zapoznać się z regulaminem";
+                }
+            }
+        </script>
+    </body>
+</html>
