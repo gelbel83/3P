@@ -1,0 +1,57 @@
+* {
+    text-align: center;
+    font-family: Georgia;
+}
+
+.naglowkowy, .stopki {
+    background-color: tomato;
+    color: mistyrose;
+    padding: 10px;
+}
+
+.nawigacyjny {
+    float: left;
+    width: 20%;
+}
+
+.blok1, .blok2, .blok3 {
+    background-color: #FFAEA5;
+    height: 170px;
+    font-size: 200%;
+}
+
+.blok1 {
+    background-color: mistyrose;
+}
+
+.glowny {
+    float: left;
+
+    background-color: mistyrose;
+    width: 80%;
+    height: 510px;
+    overflow: auto;
+}
+
+.sekcja2, .sekcja3 {
+    display: none;
+}
+
+table {
+    margin: auto;
+    width: 60%;
+    border: indigo 1px dashed;
+}
+
+select, button {
+    margin: 20px;
+}
+
+dt {
+    font-weight: bold;
+    font-style: italic;
+}
+
+dt:hover {
+    font-size: 180%;
+}
