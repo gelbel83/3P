@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="pl" />
+        <meta charset="utf-8" />
+
+        <title>Kursy komputerowe</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+
+        <script defer>
+            function oblicz() {
+                let reactZaznaczony = document.getElementById("react").checked;
+                let javascriptZaznaczony = document.getElementById("javascript").checked;
+                
+                let miasto = document.getElementById("miasto").value;
+                let liczba = document.getElementById("liczba").value;
+
+                let kwota = 0;
+
+                if (reactZaznaczony) kwota += 5000;
+                if (javascriptZaznaczony) kwota += 3000;
+
+                let rata = Math.round((kwota / liczba) * 100) / 100;
+
+                let wynik = document.getElementById("wynik");
+                wynik.innerText = "Kurs odbędzie się w " + miasto + ". Koszt całkowity: " + kwota + "zł. Płacisz " + liczba +  " rat po " + rata + "zł";
+            }
+            
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <img src="baner.png" alt="kursy komputerowe"/>
+        </header>
+
+        <menu>
+            <a href="index.html">Strona główna</a>
+            <a href="raty.html">Koszt rat</a>
+            <a href="https://moje-szkolenia.pl/">Nasz partner</a>
+        </menu>
+
+        <main>
+            <h3>Oblicz miesięczną ratę</h3>
+
+            <input type="checkbox" class="kontrolki" id="react"/>
+            <label>Kurs React.js</label>
+
+            <br />
+
+            <input type="checkbox" class="kontrolki" id="javascript"/>
+            <label>Kurs JavaScript</label>
+
+            <br />
+
+            <label>Liczba rat: </label>
+            <input type="number" class="kontrolki" id="liczba"/>
+
+            <br />
+
+            <select class="kontrolki" id="miasto">
+                <option>Warszawa</option>
+                <option>Katowice</option>
+                <option>Gdańsk</option>
+            </select>
+
+            <br />
+
+            <button class="kontrolki" onclick="oblicz()">Oblicz</button>
+
+            <br />
+
+            <p id="wynik"></p>
+        </main>
+
+        <footer>
+            <p>Autor strony: Konrad Goliński</p>
+        </footer>
+    </body>
+</html>

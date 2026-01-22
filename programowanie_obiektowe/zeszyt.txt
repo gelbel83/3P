@@ -1286,3 +1286,287 @@ int main()
 	std::cout << "Najwieksza wartosc" << max << std::endl;
 }
 
+Temat: Tablice i wskaźniki
+
+zad. 5.5 str.134
+
+Wariant pierwszy:
+
+#include <iostream>
+using namespace std;
+int main() {
+    const int n = 5;
+
+    double tablica[n];
+    
+    double *wsk;
+    wsk = tablica;
+    
+    cout << "Podaj wartości " << n << " elementów tablicy:" << endl;
+    
+    for (int i = 0; i < n; i++) {
+        cout << " tablica[" << i << "] = ";
+        cin >> *(wsk + i);
+    }
+
+    double suma = 0;
+
+    for (int i = 0; i < n; i++) {
+        suma += *(wsk + i);
+    }
+    
+    cout << "Suma elementów tablicy wynosi: " << suma << endl;
+    
+    return 0;
+}
+
+Wariant drugi:
+
+#include <iostream>
+using namespace std;
+int main() {
+    const int n = 5;
+
+    double tablica[n];
+    
+    double *wsk;
+    wsk = tablica;
+    
+    cout << "Podaj wartości " << n << " elementów tablicy:" << endl;
+    
+    for (int i = 0; i < n; i++) {
+        cout << " tablica[" << i << "] = ";
+        cin >> wsk[i];
+    }
+
+    double suma = 0;
+
+    for (int i = 0; i < n; i++) {
+        suma += wsk[i];
+    }
+    
+    cout << "Suma elementów tablicy wynosi: " << suma << endl;
+    
+    return 0;
+}
+
+Temat: C-struktury i C-unie
+
+1. Struktura (ang. struct) znana z języka C to zbiór danych należących do dowolnych typów.
+
+2. Deklaracja struktury
+
+struct nazwa_struktury {
+	typ_pola_1 nazwa_pola_1;
+	typ_pola_2 nazwa_pola_2;
+	...
+};
+
+3. Unia - złożony typ danych, który można określić jako
+„C-strukturę z wariantami”. Unie, podobnie jak struktury, należą do typów danych definio-
+wanych przez użytkownika
+
+4. Deklaracja unii
+
+union nazwa {
+	typ_1 nazwa_1;
+	typ_2 nazwa_2;
+	...
+}
+
+
+Przykład 7.3/175
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+struct Pracownik;
+
+int main() {
+    struct Pracownik {
+        char imie[20];
+        char nazwisko[20];
+        char stanowisko[30];
+    };
+    
+    Pracownik pracownik;
+
+    strcpy(pracownik.imie, "Adam");
+    strcpy(pracownik.nazwisko, "Kowalski");
+    strcpy(pracownik.stanowisko, "dyrektor");
+
+    cout << pracownik.imie << endl;
+    cout << pracownik.nazwisko << endl;
+    cout << pracownik.stanowisko << endl;
+    
+    return 0;
+}
+
+Przykład 7.4/177
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Pracownik {
+    string imie;
+    string nazwisko;
+    unsigned int nr_ewid;
+};
+
+int main() {
+    
+    Pracownik pracownik1 = {"Jan", "Kowalski", 1234};
+    cout << pracownik1.imie << endl;
+    cout << pracownik1.nazwisko << endl;
+    cout << pracownik1.nr_ewid << endl;
+    
+    Pracownik pracownik2 {};
+    cout << pracownik2.imie << endl;
+    cout << pracownik2.nazwisko << endl;
+    cout << pracownik2.nr_ewid << endl;
+    
+    Pracownik pracownik3 {"Jan", "Nowak", 2345};
+    cout << pracownik3.imie << endl;
+    cout << pracownik3.nazwisko << endl;
+    cout << pracownik3.nr_ewid << endl;
+    
+    Pracownik pracownik4 {}; // C++11
+    cout << pracownik4.imie << endl;
+    cout << pracownik4.nazwisko << endl;
+    cout << pracownik4.nr_ewid << endl;
+    
+    return 0;
+}
+
+Przykład 7.5 / 178 (zmodifykowane)
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Data {
+    unsigned int dd, mm, rr;
+};
+
+struct Uczen {
+
+    string imie;
+    string nazwisko;
+    unsigned int nr_ewid;
+    Data data_urodzenia;
+    unsigned short oceny[3];
+};
+
+void wypiszDane(Uczen uczen) {
+    cout << uczen.imie << endl;
+    cout << uczen.nazwisko << endl;
+    cout << uczen.nr_ewid << endl;
+
+    cout << uczen.data_urodzenia.dd << endl;
+    cout << uczen.data_urodzenia.mm << endl;
+    cout << uczen.data_urodzenia.rr << endl;
+
+    cout << uczen.oceny[0] << endl;
+    cout << uczen.oceny[1] << endl;
+    cout << uczen.oceny[2] << endl;
+}
+
+int main() {
+    Uczen uczen = {"Jan", "Kowalski", 1234, {30, 10, 2000}, {3, 4, 5}};
+    wypiszDane(uczen);
+    
+    Uczen uczen2 = {"Anna", "Nowak", 2645, {12, 11, 2002}, {5, 1, 6}};
+    wypiszDane(uczen2);
+    
+    return 0;
+}
+
+Zadanie 1 / 190
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Smartfon {
+    string marka;
+    string model;
+    float cena;
+    float przekatna_ekranu;
+};
+
+int main() {
+    Smartfon smartfon;
+    
+    cout << "Wprowadz marke: ";
+    cin >> smartfon.marka;
+    
+    cout << "Wprowadz model: ";
+    cin >> smartfon.model;
+    
+    cout << "Wprowadz cene: ";
+    cin >> smartfon.cena;
+    
+    cout << "Wprowadz przekatna ekranu: ";
+    cin >> smartfon.przekatna_ekranu;
+    
+    cout << endl;
+    
+    cout << "Marka: " << smartfon.marka << endl;
+    cout << "Model: " << smartfon.model << endl;
+    cout << "Cena: " << smartfon.cena << endl;
+    cout << "Przekatna ekranu: " << smartfon.przekatna_ekranu << endl;
+    
+    return 0;
+}
+
+Zadanie 5 / 191 (niedokonczone)
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Kwadrat {
+    int a;
+};
+
+struct Prostokat {
+    int a, b;
+};
+
+union Figura {
+    Kwadrat kwadrat;
+    Prostokat prostokat;
+};
+
+int main() {
+    Figura figura;
+}
+
+Temat: Funkcje
+
+1. Składnia
+
+typ_zwracany nazwa (lista_parametrów) 
+{
+	// ciało
+}
+
+2. Wywoływanie funkcji - nazwa_funkcji(argumentowy)
+3. Funkcja bezparametrowa - typ_zwracany nazwa_funkcji(void);
+4. void - pustka #WOW
+5. return - słowo kluczowe, zwraca wartosc funkcji.
+6. przekazywanie argumentów - 
+
+
+
+
+
+
+
+
