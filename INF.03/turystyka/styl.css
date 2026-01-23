@@ -16,6 +16,10 @@
     overflow: auto;
 }
 
+.sekcja {
+    background-color: white;
+}
+
 .boczny {
     background-color: #B2DFDB;
 }
@@ -24,7 +28,7 @@
     background-color: #00838F;
     opacity: 0.7;
     height: 150px;
-    margin: 10px 10px 100px 100px;
+    margin: 10px 100px;
     border-radius: 30px;
 }
 
