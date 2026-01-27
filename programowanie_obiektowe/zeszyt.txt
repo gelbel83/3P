@@ -1561,7 +1561,44 @@ typ_zwracany nazwa (lista_parametrów)
 3. Funkcja bezparametrowa - typ_zwracany nazwa_funkcji(void);
 4. void - pustka #WOW
 5. return - słowo kluczowe, zwraca wartosc funkcji.
-6. przekazywanie argumentów - 
+6. przekazywanie argumentów
+7. Parametry domyślne - parametry opcjonalne, nie wymagają podania
+8. Zmienne globalne, lokalne i blokowe
+Zmienna globalna żyje od początku do końca programu
+Zmienna lokalna żyje od klamry do klamry
+9. Prysłanianie - nazwy zmiennych w rożnych blokach są takie same
+10. Przeciążenie - nazwy funkcji są takie same ale mają rożne argumenty 
+
+zad. 8.21 / 234
+
+#include <iostream>
+using namespace std;
+
+double srednia(double l1, double l2) {
+	return pow(l1 * l2, 1.0 / 2.0);
+}
+double srednia(int l1, int l2) {
+	return pow(l1 * l2, 1.0 / 2.0);
+}
+
+double srednia(double l1, double l2, double l3) {
+	return pow(l1 * l2 * l3, 1.0 / 3.0);
+}
+double srednia(int l1, int l2, int l3) {
+	return pow(l1 * l2 * l3, 1.0 / 3.0);
+}
+
+int main() {
+	cout << "Srednia geometryczna z dwoch liczb rzeczywistych: " << srednia(2.5, 9.5) << endl;
+	cout << "Srednia geometryczna z dwoch liczb calkowitych: " << srednia(3, 27) << endl;
+	cout << "Srednia geometryczna z trzech liczb rzeczywistych: " << srednia(7.25, 3.53103, 2.5) << endl;
+	cout << "Srednia geometryczna z trzech liczb calkowitych: " << srednia(9, 2, 12) << endl;
+
+	return 0;
+}
+
+
+
 
 
 
