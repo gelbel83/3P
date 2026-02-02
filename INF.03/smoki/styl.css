@@ -9,8 +9,11 @@
     padding: 10px;
 }
 
+.wrapper {
+    display: flex;
+}
+
 .nawigacyjny {
-    float: left;
     width: 20%;
 }
 
@@ -25,8 +28,6 @@
 }
 
 .glowny {
-    float: left;
-
     background-color: mistyrose;
     width: 80%;
     height: 510px;
@@ -40,7 +41,7 @@
 table {
     margin: auto;
     width: 60%;
-    border: indigo 1px dashed;
+    border: 1px indigo dashed;
 }
 
 select, button {

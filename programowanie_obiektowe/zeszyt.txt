@@ -1597,13 +1597,62 @@ int main() {
 	return 0;
 }
 
+zadanie od pani z warszawa i jakims samolotem
+
+#include <iostream>
+
+float obliczPredkosc(float minuty) {
+    float godziny = minuty / 60;
+    int odleglosc = 1322;
+    return odleglosc / godziny;
+}
+
+int main() {
+    std::cout << obliczPredkosc(150) << "km/h";
+}
+
+Przykład 8.22 / 235
+
+#include <iostream>
+
+inline double inline_max(double x, double y) {
+    return (x > y) ? x : y;
+}
+
+inline double inline_min(double x, double y) {
+    return (x < y) ? x : y;
+}
+
+using namespace std;
+
+int main() {
+    double a = 1, b = 2;
+
+    cout << "Dane wejściowe: " << a << ", " << b << endl;
+    cout << "Większa z zadanych liczb = " << inline_max(a, b) << endl;
+
+    return 0;
+}
 
 
+11. Funkcja inline - wstawia kod w miejsce wywołania w czasie kompilacji zwiększa wydajność, ale zwiększa również rozmiar programu
+
+12. Funkcja rekurencyjna - funkcja która wywołuje samą siebie
 
 
-
-
-
+        | Programowanie obiektowe        | Programowanie strukturalne         
+-------------------------------------------------------------------------
+        | hermatyzacja                   | podzielone na mniejsze podprogramy 
+Cechy	| dziedziczenie                  | uporządkowane instrukcje           
+        | polimorfizm                    | realizacja programu krok po kroku  
+-------------------------------------------------------------------------
+        | modułowość                     | łatwiejsze do czytania i zrozumienia
+Zalety  | skalowalność                   | debugowanie jest uproszczone
+        | łatwość utrzymania             | łatwa implementacja
+-------------------------------------------------------------------------
+        | trudniejsza krzywa uczenia się | trudniejsze testowanie
+Wady    | możliwość powielania kodu      | ograniczone dla dużych projektów
+        | przeciążenie pamięci           | trudność ze skalowaniem
 
 
 
